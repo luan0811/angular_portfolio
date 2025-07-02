@@ -4,12 +4,13 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AccomplishmentsComponent } from './components/accomplishments/accomplishments.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '', component: HomeComponent, title: 'Home' },
+  { path: 'about', component: AboutComponent, title: 'About Me' },
+  { path: 'projects', component: ProjectsComponent, title: 'Projects' },
+  { path: 'accomplishments', component: AccomplishmentsComponent, title: 'Accomplishments' },
+  { path: 'contact', component: ContactComponent, title: 'Contact' },
   { path: '**', redirectTo: '' }
 ];

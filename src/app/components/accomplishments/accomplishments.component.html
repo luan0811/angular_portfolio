@@ -1,0 +1,32 @@
+<div class="accomplishments">
+  <h2>Thành tựu của tôi</h2>
+  
+  <div class="certificates-list">
+    @for (cert of certificates; track cert.title) {
+      <div class="certificate-item">
+        <h3>{{ cert.title }}</h3>
+        @if (cert.description) {
+          <p>{{ cert.description }}</p>
+        }
+        @if (cert.courses) {
+          <ul class="course-list">
+            @for (course of cert.courses; track course) {
+              <li>{{ course }}</li>
+            }
+          </ul>
+        }
+        @if (cert.issueDate) {
+          <p>Năm: {{ cert.issueDate }}</p>
+        }
+        
+        <button (click)="openCertificate(cert.url)" class="view-certificate-btn">
+          Xem chứng chỉ
+        </button>
+        
+        <a [href]="cert.url" target="_blank" class="certificate-link">
+          Xem trên Coursera
+        </a>
+      </div>
+    }
+  </div>
+</div>
